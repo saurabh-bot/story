@@ -1,5 +1,18 @@
 /*input
-1
+6
+4 1
+2 3 5 4
+5 6
+1 1 3 4 4
+1 10
+2
+2 10
+11 9
+2 10
+12 11
+5 18
+81 324 218 413 324
+
 */
 import java.util.*;
 import java.lang.*;
@@ -139,14 +152,44 @@ public class Main
 	{
 		OutputStream outputStream =System.out;
         out =new PrintWriter(outputStream);
-        FastReader reader =new FastReader();
+        FastReader sc =new FastReader();
 		//for fast output sometimes
 		StringBuilder sb = new StringBuilder();
-		int t = reader.nextInt();
+		int t = sc.nextInt();
 		while(t-->0){
-            
-		}
+			int n = sc.nextInt();
+            int x = sc.nextInt();
+            int arr[] = new int[n];
+            iIA(sc, arr);
+            int count=0;
+            int ans=0;
+            boolean possible = false;
+            for(int i=0; i<n; i++){
+            	count=0;
+            	for(int j=0; j<n-1; j++){
+            		if(arr[j] <= arr[j+1])
+            			count++;
+            	}
+            	if(count == n-1){
+            		possible = true;
+            		break;
+            	}
+            	else{
+            		if(arr[i]>x){
+            			arr[i]^=x;
+            			x^=arr[i];
+            			arr[i]^=x;
+            			ans++;
+            		}
+
+            	}
+
+            }
+            if(possible)
+               	out.println(ans);
+            else
+            	out.println(-1);
+        }
 		out.close();
 	}
-	
 }
