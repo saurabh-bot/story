@@ -105,7 +105,7 @@ public class Main
 		}
 	}
 
-	// Method to check if x is power of 2
+	//Method to check if x is power of 2
     static boolean isPowerOfTwo (int x) { return x!=0 && ((x&(x-1)) == 0);}
     //Method to return lcm of two numbers
     static int gcd(int a, int b){return a==0?b:gcd(b % a, a); }
@@ -117,18 +117,12 @@ public class Main
     //Method to find the max in an array
     static int getMax(int arr[]){
     	int max = arr[0];
-    	for(int i=0; i<arr.length; i++){
-    		max = arr[i]>max?arr[i]:max;
-    	}
-    	return max;
+    	for(int i=0; i<arr.length; i++)max = arr[i]>max?arr[i]:max;return max;
     }
     //Method to find the min in an array
     static int getMin(int arr[]){
     	int min = arr[0];
-    	for(int i=0; i<arr.length; i++){
-    		min = min>arr[i]?arr[i]:min;
-    	}
-    	return min;
+    	for(int i=0; i<arr.length; i++)min = min>arr[i]?arr[i]:min;return min;
     }
     
 	
@@ -142,7 +136,7 @@ public class Main
 		StringBuilder sb = new StringBuilder();
 		int t = ni();
 		while(t-->0){
-			
+
         }
 		out.close();
 	}
