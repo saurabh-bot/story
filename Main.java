@@ -8,35 +8,45 @@ public class Main
 {
 	static PrintWriter out;
 	static int MOD = 1000000007;
-     /*-------- for output ---------------------*/
+	static FastReader scan;
+
+    /*-------- I/O using short named function ---------*/
+	public static String ns(){return scan.next();}
+	public static int ni(){return scan.nextInt();}
+	public static long nl(){return scan.nextLong();}
+	public static double nd(){return scan.nextDouble();}
+	public static void p(Object o){out.print(o);}
+	public static void ps(Object o){out.print(o + " ");}
+	public static void pn(Object o){out.println(o);}
+    /*-------- for output of an array ---------------------*/
      static void iPA(int arr []){
      	 StringBuilder output = new StringBuilder();
-	     for(int i=0; i<arr.length; i++)output.append(arr[i] + " ");System.out.println(output);
+	     for(int i=0; i<arr.length; i++)output.append(arr[i] + " ");out.println(output);
 	}
 	static void lPA(long arr []){
 	     StringBuilder output = new StringBuilder();
-	     for(int i=0; i<arr.length; i++)output.append(arr[i] + " ");System.out.println(output);
+	     for(int i=0; i<arr.length; i++)output.append(arr[i] + " ");out.println(output);
 	}
 	static void sPA(String arr []){
 	     StringBuilder output = new StringBuilder();
-	     for(int i=0; i<arr.length; i++)output.append(arr[i] + " ");System.out.println(output);
+	     for(int i=0; i<arr.length; i++)output.append(arr[i] + " ");out.println(output);
 	}
 	static void dPA(double arr []){
 	     StringBuilder output = new StringBuilder();
-	     for(int i=0; i<arr.length; i++)output.append(arr[i] + " ");System.out.println(output);
+	     for(int i=0; i<arr.length; i++)output.append(arr[i] + " ");out.println(output);
 	}
-    /*-------------- for input ---------------------*/
-	static void iIA(FastReader reader, int arr[]){
-	     for(int i=0; i<arr.length; i++)arr[i] = reader.nextInt(); 
+    /*-------------- for input in an array ---------------------*/
+	static void iIA(int arr[]){
+	     for(int i=0; i<arr.length; i++)arr[i] = ni();
 	}
 	static void lIA(FastReader reader, long arr[]){
-	     for(int i=0; i<arr.length; i++)arr[i] = reader.nextLong(); 
+	     for(int i=0; i<arr.length; i++)arr[i] = nl(); 
 	}
 	static void sIA(FastReader reader, String arr[]){
-	     for(int i=0; i<arr.length; i++)arr[i] = reader.next(); 
+	     for(int i=0; i<arr.length; i++)arr[i] = ns(); 
 	}
 	static void dIA(FastReader reader, double arr[]){
-	     for(int i=0; i<arr.length; i++)arr[i] = reader.nextDouble();
+	     for(int i=0; i<arr.length; i++)arr[i] = nd();
 	}
 	/*------------ for taking input faster ----------------*/
      static class FastReader
@@ -96,22 +106,16 @@ public class Main
 	}
 
 	// Method to check if x is power of 2
-    static boolean isPowerOfTwo (int x) 
-    { 
-        return x!=0 && ((x&(x-1)) == 0);     
-    }
+    static boolean isPowerOfTwo (int x) { return x!=0 && ((x&(x-1)) == 0);}
     //Method to return lcm of two numbers
-    static int gcd(int a, int b)
-    {
-        return a==0?b:gcd(b % a, a); 
-    }
+    static int gcd(int a, int b){return a==0?b:gcd(b % a, a); }
     // method to return LCM of two numbers
-    static int lcm(int a, int b)
-    {
-        return (a / gcd(a, b)) * b;
-    }
+    static int lcm(int a, int b){return (a / gcd(a, b)) * b;}
+    //Method to count digit of a number
+    static int countDigit(long n){return (int)Math.floor(Math.log10(n) + 1);}
+
     //Method to find the max in an array
-    public static int findMax(int arr[]){
+    static int getMax(int arr[]){
     	int max = arr[0];
     	for(int i=0; i<arr.length; i++){
     		max = arr[i]>max?arr[i]:max;
@@ -119,47 +123,26 @@ public class Main
     	return max;
     }
     //Method to find the min in an array
-    public static int findMin(int arr[]){
+    static int getMin(int arr[]){
     	int min = arr[0];
     	for(int i=0; i<arr.length; i++){
     		min = min>arr[i]?arr[i]:min;
     	}
     	return min;
     }
-    private static int countDigits(long l) {
-			if (l >= 1000000000000000000L) return 19;
-			if (l >= 100000000000000000L) return 18;
-			if (l >= 10000000000000000L) return 17;
-			if (l >= 1000000000000000L) return 16;
-			if (l >= 100000000000000L) return 15;
-			if (l >= 10000000000000L) return 14;
-			if (l >= 1000000000000L) return 13;
-			if (l >= 100000000000L) return 12;
-			if (l >= 10000000000L) return 11;
-			if (l >= 1000000000L) return 10;
-			if (l >= 100000000L) return 9;
-			if (l >= 10000000L) return 8;
-			if (l >= 1000000L) return 7;
-			if (l >= 100000L) return 6;
-			if (l >= 10000L) return 5;
-			if (l >= 1000L) return 4;
-			if (l >= 100L) return 3;
-			if (l >= 10L) return 2;
-			return 1;
-		}
-
-
+    
+	
 
 	public static void main (String[] args) throws java.lang.Exception
 	{
 		OutputStream outputStream =System.out;
         out =new PrintWriter(outputStream);
-        FastReader sc =new FastReader();
+        scan =new FastReader();
 		//for fast output sometimes
 		StringBuilder sb = new StringBuilder();
-		int t = sc.nextInt();
+		int t = ni();
 		while(t-->0){
-            
+			
         }
 		out.close();
 	}
