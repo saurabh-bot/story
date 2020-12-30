@@ -15,6 +15,7 @@ public class Main
 	public static int ni(){return scan.nextInt();}
 	public static long nl(){return scan.nextLong();}
 	public static double nd(){return scan.nextDouble();}
+	public static String nln(){return scan.nextLine();}
 	public static void p(Object o){out.print(o);}
 	public static void ps(Object o){out.print(o + " ");}
 	public static void pn(Object o){out.println(o);}
@@ -39,13 +40,13 @@ public class Main
 	static void iIA(int arr[]){
 	     for(int i=0; i<arr.length; i++)arr[i] = ni();
 	}
-	static void lIA(FastReader reader, long arr[]){
+	static void lIA(long arr[]){
 	     for(int i=0; i<arr.length; i++)arr[i] = nl(); 
 	}
-	static void sIA(FastReader reader, String arr[]){
+	static void sIA(String arr[]){
 	     for(int i=0; i<arr.length; i++)arr[i] = ns(); 
 	}
-	static void dIA(FastReader reader, double arr[]){
+	static void dIA(double arr[]){
 	     for(int i=0; i<arr.length; i++)arr[i] = nd();
 	}
 	/*------------ for taking input faster ----------------*/
@@ -105,7 +106,7 @@ public class Main
 		}
 	}
 
-	//Method to check if x is power of 2
+	// Method to check if x is power of 2
     static boolean isPowerOfTwo (int x) { return x!=0 && ((x&(x-1)) == 0);}
     //Method to return lcm of two numbers
     static int gcd(int a, int b){return a==0?b:gcd(b % a, a); }
@@ -117,12 +118,18 @@ public class Main
     //Method to find the max in an array
     static int getMax(int arr[]){
     	int max = arr[0];
-    	for(int i=0; i<arr.length; i++)max = arr[i]>max?arr[i]:max;return max;
+    	for(int i=0; i<arr.length; i++){
+    		max = arr[i]>max?arr[i]:max;
+    	}
+    	return max;
     }
     //Method to find the min in an array
     static int getMin(int arr[]){
     	int min = arr[0];
-    	for(int i=0; i<arr.length; i++)min = min>arr[i]?arr[i]:min;return min;
+    	for(int i=0; i<arr.length; i++){
+    		min = min>arr[i]?arr[i]:min;
+    	}
+    	return min;
     }
     
 	
@@ -136,7 +143,7 @@ public class Main
 		StringBuilder sb = new StringBuilder();
 		int t = ni();
 		while(t-->0){
-
+			
         }
 		out.close();
 	}
